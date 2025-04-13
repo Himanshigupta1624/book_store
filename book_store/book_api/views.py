@@ -29,7 +29,7 @@ class BookViewSet(viewsets.ModelViewSet):
       search_fields = ['title', 'isbn', 'author__name', 'description']
       ordering_fields = ['title', 'author__name', 'published_date', 'price', 'created_at'] 
       
-class ReviewViewSet(viewsets.ModelViewSet):
+class ReviewViewSet(viewsets.ModelViewSet):#just want to add the comment 
     queryset=Review.objects.all()
     serializer_class=ReviewSerializer
     permission_classes=[permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly]
